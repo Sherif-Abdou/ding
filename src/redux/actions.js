@@ -21,10 +21,12 @@ export function setFeed(feed) {
 // Async Actions
 
 export function refreshAsync() {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const url = getState().feed;
+        console.log("Refresh url: " + url);
         fetch("http://localhost:5000/rss", {
             headers: {
-                url: "http://rss.cnn.com/rss/cnn_topstories.rss",
+                url: url,
             },
             method: "GET",
             mode: "cors",

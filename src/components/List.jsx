@@ -14,7 +14,7 @@ class List extends React.Component {
         if (this.props.articles) {
             listItems = this.props.articles.map((item, i) => (
                 <li className="list-group-item" key={i}>
-                    <ListItem item={item} itemId={i}/>
+                    <ListItem item={item} itemId={i} />
                 </li>
             ));
         } else {
@@ -22,7 +22,7 @@ class List extends React.Component {
         }
 
         return (
-            <div>
+            <div className="row">
                 <ul className="list-group">{listItems}</ul>
             </div>
         );
@@ -30,10 +30,8 @@ class List extends React.Component {
 }
 
 const mapStateToProps = (state, props) => {
-    const { ding } = state;
-    console.log("Items: " + ding.items);
     return {
-        articles: ding.items,
+        articles: state.items,
     };
 };
 

@@ -8,13 +8,15 @@ const initialState = {
 export function ding(state = initialState, action) {
     switch (action.type) {
         case REFRESH:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 items: action.items,
-            });
+            };
         case SETFEED:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 feed: action.feed,
-            });
+            };
         default:
             return state;
     }

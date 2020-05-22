@@ -11,14 +11,14 @@ class ListItem extends React.Component {
                 <div>
                     <h2>{item.title}</h2>
                     <a
-                        className="btn btn-primary"
+                        className="btn btn-secondary"
                         data-toggle="collapse"
                         href={"#" + referenceID}
                         role="button"
                         aria-expanded="false"
                         aria-controls="collapseExample"
                     >
-                        More
+                        Details
                     </a>
                 </div>
                 <div className="collapse" id={referenceID}>
