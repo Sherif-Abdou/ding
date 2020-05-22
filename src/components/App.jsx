@@ -1,11 +1,17 @@
 import React from "react";
-import logo from "./logo.svg";
+import List from "./List";
 import { refreshAsync } from "../redux/actions";
-import store from "../redux/store";
-import "./App.css";
 
-function App() {
-  return <div className="App"></div>;
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>Ding</h1>
+
+                <List />
+            </div>
+        );
+    }
 }
 
 export default App;

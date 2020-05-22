@@ -10,18 +10,18 @@ const RSSPARSER = new Parser();
 // Action Creators
 
 export function refresh(items) {
-  return { type: REFRESH, items };
+    return { type: REFRESH, items };
 }
 
 // Async Actions
 
 export function refreshAsync() {
-  return (dispatch) => {
-    fetch("http://localhost:5000/cnn")
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        dispatch(refresh(res.items));
-      });
-  };
+    return (dispatch) => {
+        fetch("http://localhost:5000/cnn")
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res.items);
+                dispatch(refresh(res.items));
+            });
+    };
 }
