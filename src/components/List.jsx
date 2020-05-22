@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { refreshAsync } from "../redux/actions";
+import ListItem from "./ListItem";
 
 class List extends React.Component {
     constructor(props) {
@@ -11,8 +12,10 @@ class List extends React.Component {
     render() {
         let listItems;
         if (this.props.articles) {
-            listItems = this.props.articles.map((item) => (
-                <li className="list-group-item">{item.title}</li>
+            listItems = this.props.articles.map((item, i) => (
+                <li className="list-group-item" key={i}>
+                    <ListItem item={item} itemId={i}/>
+                </li>
             ));
         } else {
             listItems = <p>None</p>;
