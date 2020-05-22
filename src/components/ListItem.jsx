@@ -1,11 +1,11 @@
 import React from "react";
+import DOMPurify from "dompurify";
 
 class ListItem extends React.Component {
     render() {
-        const { item, id } = this.props;
+        const { item, itemId } = this.props;
 
-        const referenceID = "itemDetails" + id;
-
+        const referenceID = "itemDetails" + itemId;
         return (
             <div>
                 <div>
@@ -22,9 +22,12 @@ class ListItem extends React.Component {
                     </a>
                 </div>
                 <div className="collapse" id={referenceID}>
-                    <div className="card card-body">
-                        <p>{item.content}</p>
-                    </div>
+                    <div
+                        className="card card-body"
+                        dangerouslySetInnerHTML={{
+                            __html: DOMPurify.sanitize(item.content),
+                        }}
+                    ></div>
                 </div>
             </div>
         );
