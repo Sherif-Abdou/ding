@@ -12,7 +12,7 @@ class List extends React.Component {
         let listItems;
         if (this.props.articles) {
             listItems = this.props.articles.map((item) => (
-                <li>{item.title}</li>
+                <li className="list-group-item">{item.title}</li>
             ));
         } else {
             listItems = <p>None</p>;
@@ -20,7 +20,7 @@ class List extends React.Component {
 
         return (
             <div>
-                <ol>{listItems}</ol>
+                <ul className="list-group">{listItems}</ul>
             </div>
         );
     }
