@@ -21,19 +21,21 @@ class FeedControl extends React.Component {
 
     render() {
         return (
-            <div className="row">
-                <input
-                    type="text"
-                    value={this.props.feed}
-                    onChange={this.handleInputUpdate}
-                    className="form-control col-6"
-                />
-                <button
-                    className="btn btn-primary col-2"
-                    onClick={this.handleRefreshClick}
-                >
-                    Refresh
-                </button>
+            <div>
+                <div className="row form-inline">
+                    <input
+                        type="text"
+                        value={this.props.feed}
+                        onChange={this.handleInputUpdate}
+                        className="form-control col-sm-8"
+                    />
+                    <button
+                        className="btn btn-primary col-sm-4"
+                        onClick={this.handleRefreshClick}
+                    >
+                        Refresh
+                    </button>
+                </div>
             </div>
         );
     }
